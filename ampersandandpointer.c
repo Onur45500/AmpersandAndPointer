@@ -5,24 +5,23 @@
 
 #define F fflush(stdout)
 
-int addition(int a, int b)
+void addition(int a, int b, int *target)
 {
-	int result;
-	result = a + b;
-	
-	return result;
+	*target = a + b;
 }
 int main()
 {
-	int a, b;
+	int a, b, result;
 	
 	printf("Write a :\n"); F;
 	scanf("%d", &a);
 
 	printf("Write b :\n"); F;
 	scanf("%d", &b);
+	
+	addition(a, b, &result);
 
-	printf("%d + %d = %d\n", a, b, addition(a, b));
+	printf("%d + %d = %d\n", a, b, result);
 
 	return 0;
 }
